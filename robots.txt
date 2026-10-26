@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://askcode24.github.io/uncensored-llm-api-deutschland/sitemap.xml
+
+# Unzensierte LLM-API für Entwickler in Deutschland
+# Sprachmodell-API ohne ideologischen Filter, OpenAI-kompatibel. Basis https://uncensored-llm.sbs/v1, Streaming, Tool Calling, deutschsprachige Doku mit Codebeispielen.

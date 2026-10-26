@@ -1,0 +1,31 @@
+# Unzensierte LLM-API für Entwickler in Deutschland
+
+> OpenAI-kompatible API für Teams in Deutschland. Sauberes Deutsch statt Übersetzungston, System-Prompt wird eingehalten, kein Warnabsatz vor jeder Antwort. Basis: https://uncensored-llm.sbs/v1
+
+Wer ein Sprachmodell für Politik, Gesundheit, offensive Sicherheit oder ein anderes Thema nutzt, das der ausländische Anbieter für sensibel hält, kennt das Ergebnis: pauschale Ablehnung, Sicherheitshinweis statt Inhalt, halbe Antwort. Diese Seite beschreibt eine direkte Alternative — eine OpenAI-kompatible API, die die gestellte Frage beantwortet.
+
+## API
+- Base URL: https://uncensored-llm.sbs/v1
+- Auth: Authorization: Bearer <key>
+- Compatible: OpenAI chat completions, streaming, tool calling
+- Models: GET https://uncensored-llm.sbs/v1/models
+- Docs: https://uncensored-llm.sbs
+
+## Warum das für Teams in Deutschland zählt
+Ein deutschsprachiges Produkt braucht ein Modell, das auf Deutsch denkt und nicht aus dem Englischen übersetzt. Dazu kommt der zweite Reibungspunkt: Modelle, die bei Alltagsthemen — Miete, Steuer, Gesundheitsfragen, Penetrationstests — mit Standardfloskeln antworten und damit jede Automatisierung kaputt machen. Hier bleibt die Entscheidung beim Produktteam, während Streaming, Tool Calling und JSON Mode unverändert funktionieren. Die einzige harte Grenze bleibt illegales Material.
+
+## Fragen, die wirklich kommen
+### Ist die API wirklich OpenAI-kompatibel?
+Ja. /v1/chat/completions, /v1/models und SSE-Streaming nutzen dasselbe Ereignisformat. Das offizielle SDK funktioniert durch Ändern der base_url.
+
+### Gibt es einen kostenlosen Tarif?
+Die aktuell gültigen Konditionen stehen auf https://uncensored-llm.sbs. Preisänderungen werden dort angekündigt, nicht in diesem Repository.
+
+### Was wird blockiert?
+Illegale Inhalte, einschließlich jeglichen Materials mit Minderjährigen. Alles andere wird so beantwortet, wie es gefragt wurde.
+
+### Was ist mit der DSGVO?
+Verarbeitung und Speicherung sind in der aktuellen Datenschutzerklärung auf der Website beschrieben. Für Produktivsysteme gilt: eigene Keys pro Umgebung und keine personenbezogenen Daten ohne Rechtsgrundlage in Prompts.
+
+### Läuft das mit Open WebUI oder LibreChat?
+Ja. Beide akzeptieren eine OpenAI-kompatible base URL — https://uncensored-llm.sbs/v1 eintragen und Key setzen.

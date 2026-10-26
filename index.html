@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de-DE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unzensierte LLM-API für Entwickler in Deutschland</title>
+<meta name="description" content="Sprachmodell-API ohne ideologischen Filter, OpenAI-kompatibel. Basis https://uncensored-llm.sbs/v1, Streaming, Tool Calling, deutschsprachige Doku mit Codebeispielen.">
+<meta name="keywords" content="unzensierte llm api, llm ohne filter, openai alternative, ki api deutsch, sprachmodell ohne zensur">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="uncensored-llm.sbs">
+<link rel="canonical" href="https://askcode24.github.io/uncensored-llm-api-deutschland/">
+<link rel="alternate" hreflang="pt-BR" href="https://brown1023.github.io/llm-api-sem-censura-brasil/">
+<link rel="alternate" hreflang="es-419" href="https://brown1023.github.io/api-llm-sin-censura-latam/">
+<link rel="alternate" hreflang="id-ID" href="https://ryuuless.github.io/uncensored-llm-api-indonesia/">
+<link rel="alternate" hreflang="vi-VN" href="https://ryuuless.github.io/uncensored-llm-api-vietnam/">
+<link rel="alternate" hreflang="tr-TR" href="https://askcode24.github.io/sansursuz-llm-api-turkiye/">
+<link rel="alternate" hreflang="es-ES" href="https://palazuel0s2004.github.io/api-llm-sin-censura-espana/">
+<link rel="alternate" hreflang="it-IT" href="https://palazuel0s2004.github.io/llm-api-senza-censura-italia/">
+<link rel="alternate" hreflang="en-IN" href="https://nirav0712.github.io/uncensored-llm-api-india/">
+<link rel="alternate" hreflang="en-PH" href="https://nirav0712.github.io/uncensored-llm-api-philippines/">
+<link rel="alternate" hreflang="ar" href="https://mohamedabderrehman.github.io/uncensored-llm-api-arabia/">
+<link rel="alternate" hreflang="ar-EG" href="https://mohamedabderrehman.github.io/uncensored-llm-api-egypt/">
+<link rel="alternate" hreflang="x-default" href="https://uncensored-llm.sbs/">
+<meta name="geo.region" content="DE-BE">
+<meta name="geo.placename" content="Berlin, Deutschland">
+<meta name="ICBM" content="52.5200, 13.4050">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="uncensored-llm.sbs">
+<meta property="og:title" content="Unzensierte LLM-API für Entwickler in Deutschland">
+<meta property="og:description" content="Sprachmodell-API ohne ideologischen Filter, OpenAI-kompatibel. Basis https://uncensored-llm.sbs/v1, Streaming, Tool Calling, deutschsprachige Doku mit Codebeispielen.">
+<meta property="og:url" content="https://askcode24.github.io/uncensored-llm-api-deutschland/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="llms" href="llms.txt">
+<style>*{box-sizing:border-box}body{margin:0;background:#08090c;color:#e8eaf0;font:16px/1.65 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:#22d3a6;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid #1e2230;position:sticky;top:0;background:rgba(8,9,12,.86);z-index:5}
+header .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.brand{font-weight:700}.brand span{color:#7c5cff}
+nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.btn{display:inline-block;padding:10px 18px;border-radius:9px;background:linear-gradient(135deg,#7c5cff,#5b7cff);color:#fff;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid #1e2230;color:#e8eaf0}
+.hero{padding:72px 0 52px;background:radial-gradient(900px 340px at 20% -10%,rgba(124,92,255,.28),transparent 70%)}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1.14;margin:0 0 18px;letter-spacing:-.8px}
+.sub{color:#9aa3b2;font-size:18px;max-width:660px;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:46px 0;border-top:1px solid #1e2230}
+h2{font-size:24px;margin:0 0 18px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{border:1px solid #1e2230;border-radius:13px;padding:18px;background:#0b0d13}
+.card h3{margin:0 0 8px;font-size:16px}.card p{margin:0;color:#9aa3b2;font-size:14.5px}
+pre{background:#0b0d13;border:1px solid #1e2230;border-radius:12px;padding:16px;overflow:auto;font-size:13.5px;line-height:1.55}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #1e2230}
+th{color:#9aa3b2;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.6px}
+details{border:1px solid #1e2230;border-radius:11px;padding:14px 16px;margin-bottom:10px;background:#0b0d13}
+summary{cursor:pointer;font-weight:600}details p{color:#9aa3b2;margin:10px 0 0}
+footer{border-top:1px solid #1e2230;padding:34px 0 60px;color:#9aa3b2;font-size:14px}
+footer ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://uncensored-llm.sbs/#org","name":"uncensored-llm.sbs","url":"https://uncensored-llm.sbs"},{"@type":"WebSite","@id":"https://askcode24.github.io/uncensored-llm-api-deutschland/#site","url":"https://askcode24.github.io/uncensored-llm-api-deutschland/","name":"Unzensierte LLM-API für Entwickler in Deutschland","inLanguage":"de-DE","publisher":{"@id":"https://uncensored-llm.sbs/#org"}},{"@type":"SoftwareApplication","name":"uncensored-llm.sbs API","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://askcode24.github.io/uncensored-llm-api-deutschland/","inLanguage":"de-DE","description":"Sprachmodell-API ohne ideologischen Filter, OpenAI-kompatibel. Basis https://uncensored-llm.sbs/v1, Streaming, Tool Calling, deutschsprachige Doku mit Codebeispielen.","offers":{"@type":"Offer","priceCurrency":"EUR","url":"https://uncensored-llm.sbs","description":"Aktuelle Preise und Bedingungen: https://uncensored-llm.sbs"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ist die API wirklich OpenAI-kompatibel?","acceptedAnswer":{"@type":"Answer","text":"Ja. /v1/chat/completions, /v1/models und SSE-Streaming nutzen dasselbe Ereignisformat. Das offizielle SDK funktioniert durch Ändern der base_url."}},{"@type":"Question","name":"Gibt es einen kostenlosen Tarif?","acceptedAnswer":{"@type":"Answer","text":"Die aktuell gültigen Konditionen stehen auf https://uncensored-llm.sbs. Preisänderungen werden dort angekündigt, nicht in diesem Repository."}},{"@type":"Question","name":"Was wird blockiert?","acceptedAnswer":{"@type":"Answer","text":"Illegale Inhalte, einschließlich jeglichen Materials mit Minderjährigen. Alles andere wird so beantwortet, wie es gefragt wurde."}},{"@type":"Question","name":"Was ist mit der DSGVO?","acceptedAnswer":{"@type":"Answer","text":"Verarbeitung und Speicherung sind in der aktuellen Datenschutzerklärung auf der Website beschrieben. Für Produktivsysteme gilt: eigene Keys pro Umgebung und keine personenbezogenen Daten ohne Rechtsgrundlage in Prompts."}},{"@type":"Question","name":"Läuft das mit Open WebUI oder LibreChat?","acceptedAnswer":{"@type":"Answer","text":"Ja. Beide akzeptieren eine OpenAI-kompatible base URL — https://uncensored-llm.sbs/v1 eintragen und Key setzen."}}]}]}</script>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">uncensored<span>-llm</span>.sbs</div>
+<nav><a href="#code">Code</a><a href="#lat">Latenz</a><a href="#faq">FAQ</a></nav></div></header>
+<main>
+<div class="hero"><div class="wrap"><h1>Ein Modell, das antwortet — statt zu belehren</h1><p class="sub">OpenAI-kompatible API für Teams in Deutschland. Sauberes Deutsch statt Übersetzungston, System-Prompt wird eingehalten, kein Warnabsatz vor jeder Antwort. Basis: https://uncensored-llm.sbs/v1</p>
+<div class="cta"><a class="btn" href="https://uncensored-llm.sbs">API öffnen</a><a class="btn ghost" href="#code">Jetzt testen</a></div></div></div>
+<section><div class="wrap"><h2>Was sich im Alltag ändert</h2><div class="grid">
+<div class="card"><h3>Eine Zeile ändern</h3><p>Gleiche openai-Bibliothek, anderer base_url. Der Rest des Codes bleibt unangetastet.</p></div>
+<div class="card"><h3>Deutsch ohne Übersetzungston</h3><p>Kein Satzbau aus dem Englischen, keine abgebrochenen Antworten.</p></div>
+<div class="card"><h3>Streaming und Tools</h3><p>SSE Token für Token, Function Calling, JSON Mode.</p></div>
+<div class="card"><h3>Kein ideologischer Filter</h3><p>Den Produktumfang bestimmt das Team, nicht der Anbieter.</p></div>
+</div></div></section>
+<section id="code"><div class="wrap"><h2>In 40 Sekunden lauffähig</h2><p class="sub">Läuft mit openai>=1.0, LangChain, LlamaIndex, Vercel AI SDK, Open WebUI und jedem Client mit konfigurierbarer baseURL.</p>
+<pre><code>curl https://uncensored-llm.sbs/v1/chat/completions \
+  -H "Authorization: Bearer $UNLLM_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"uncensored-llm","messages":[{"role":"user","content":"Erklär ohne Umschweife, wie Marktkapitalisierung bei Krypto berechnet wird."}],"stream":true}'</code></pre>
+<pre><code>from openai import OpenAI
+
+client = OpenAI(base_url="https://uncensored-llm.sbs/v1", api_key="sk-...")
+r = client.chat.completions.create(
+    model="uncensored-llm",
+    messages=[{"role": "user", "content": "Erklär ohne Umschweife, wie Marktkapitalisierung bei Krypto berechnet wird."}],
+)
+print(r.choices[0].message.content)</code></pre></div></section>
+<section id="lat"><div class="wrap"><h2>Latenz aus deiner Stadt</h2><p class="sub">Die Latenz macht dein Provider, nicht die Flagge. Miss zuerst von deiner Maschine:</p>
+<pre><code>curl -o /dev/null -s -w '%{time_total}s\n' https://uncensored-llm.sbs/v1/models</code></pre>
+<table><thead><tr><th>Stadt</th><th>Bundesland</th></tr></thead><tbody>
+<tr><td>Berlin</td><td>Berlin</td></tr>
+<tr><td>Hamburg</td><td>Hamburg</td></tr>
+<tr><td>München</td><td>Bayern</td></tr>
+<tr><td>Köln</td><td>NRW</td></tr>
+<tr><td>Frankfurt am Main</td><td>Hessen</td></tr>
+<tr><td>Stuttgart</td><td>Baden-Württemberg</td></tr>
+<tr><td>Düsseldorf</td><td>NRW</td></tr>
+<tr><td>Leipzig</td><td>Sachsen</td></tr>
+<tr><td>Dresden</td><td>Sachsen</td></tr>
+<tr><td>Hannover</td><td>Niedersachsen</td></tr>
+<tr><td>Nürnberg</td><td>Bayern</td></tr>
+<tr><td>Dortmund</td><td>NRW</td></tr>
+</tbody></table></div></section>
+<section><div class="wrap"><h2>Typische Einsatzfelder</h2><div class="grid">
+<div class="card"><h3>Kundensupport</h3><p>Ein Bot, der löst, statt Richtlinien vorzulesen.</p></div>
+<div class="card"><h3>Fachtexte</h3><p>Artikel, Skripte und Mails im richtigen Register.</p></div>
+<div class="card"><h3>Security-Audits</h3><p>Offensiver Test mit schriftlicher Freigabe des Kunden.</p></div>
+<div class="card"><h3>Adult-Fiktion (18+)</h3><p>Explizite Szenen zwischen Erwachsenen, ohne Ausblenden.</p></div>
+</div></div></section>
+<section id="faq"><div class="wrap"><h2>Fragen, die wirklich kommen</h2>
+<details><summary>Ist die API wirklich OpenAI-kompatibel?</summary><p>Ja. /v1/chat/completions, /v1/models und SSE-Streaming nutzen dasselbe Ereignisformat. Das offizielle SDK funktioniert durch Ändern der base_url.</p></details>
+<details><summary>Gibt es einen kostenlosen Tarif?</summary><p>Die aktuell gültigen Konditionen stehen auf https://uncensored-llm.sbs. Preisänderungen werden dort angekündigt, nicht in diesem Repository.</p></details>
+<details><summary>Was wird blockiert?</summary><p>Illegale Inhalte, einschließlich jeglichen Materials mit Minderjährigen. Alles andere wird so beantwortet, wie es gefragt wurde.</p></details>
+<details><summary>Was ist mit der DSGVO?</summary><p>Verarbeitung und Speicherung sind in der aktuellen Datenschutzerklärung auf der Website beschrieben. Für Produktivsysteme gilt: eigene Keys pro Umgebung und keine personenbezogenen Daten ohne Rechtsgrundlage in Prompts.</p></details>
+<details><summary>Läuft das mit Open WebUI oder LibreChat?</summary><p>Ja. Beide akzeptieren eine OpenAI-kompatible base URL — https://uncensored-llm.sbs/v1 eintragen und Key setzen.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Aktuelle Preise und Bedingungen: https://uncensored-llm.sbs</p><p>Diese Doku in anderen Sprachen</p><ul>
+<li><a href="https://brown1023.github.io/llm-api-sem-censura-brasil/" hreflang="pt-BR" lang="pt-BR">pt-BR</a></li>
+<li><a href="https://brown1023.github.io/api-llm-sin-censura-latam/" hreflang="es-419" lang="es-419">es-419</a></li>
+<li><a href="https://ryuuless.github.io/uncensored-llm-api-indonesia/" hreflang="id-ID" lang="id-ID">id-ID</a></li>
+<li><a href="https://ryuuless.github.io/uncensored-llm-api-vietnam/" hreflang="vi-VN" lang="vi-VN">vi-VN</a></li>
+<li><a href="https://askcode24.github.io/sansursuz-llm-api-turkiye/" hreflang="tr-TR" lang="tr-TR">tr-TR</a></li>
+<li><a href="https://palazuel0s2004.github.io/api-llm-sin-censura-espana/" hreflang="es-ES" lang="es-ES">es-ES</a></li>
+<li><a href="https://palazuel0s2004.github.io/llm-api-senza-censura-italia/" hreflang="it-IT" lang="it-IT">it-IT</a></li>
+<li><a href="https://nirav0712.github.io/uncensored-llm-api-india/" hreflang="en-IN" lang="en-IN">en-IN</a></li>
+<li><a href="https://nirav0712.github.io/uncensored-llm-api-philippines/" hreflang="en-PH" lang="en-PH">en-PH</a></li>
+<li><a href="https://mohamedabderrehman.github.io/uncensored-llm-api-arabia/" hreflang="ar" lang="ar">ar</a></li>
+<li><a href="https://mohamedabderrehman.github.io/uncensored-llm-api-egypt/" hreflang="ar-EG" lang="ar-EG">ar-EG</a></li>
+</ul><p>uncensored-llm.sbs — OpenAI-kompatible API. Illegale Inhalte und Material mit Minderjährigen werden blockiert. Alles Weitere liegt in der Verantwortung des Aufrufers.</p></div></footer>
+</body>
+</html>
